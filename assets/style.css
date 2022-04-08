@@ -1,0 +1,142 @@
+:root {
+  --text-color-header: #282526;
+  --white-color: #ffffff;
+  --border-color: #e8565c;
+}
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Steak */
+
+/* 1. Header */
+
+.steak__header {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  right: 50%;
+  transform: translateX(50%);
+  background-color: var(--white-color);
+  padding: 8px 80px;
+  width: 100%;
+  border-bottom: 1px solid #f2f3f5;
+}
+
+/* Header-left */
+
+.header__left-logo a img {
+  width: 192px;
+}
+
+/* Header-right */
+
+.header__right-menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu-item a {
+  display: block;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text-color-header);
+  text-transform: uppercase;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-bottom: 8px;
+  /* margin-bottom: 12px; */
+  margin-left: 50px;
+  transition: all linear 0.2ms;
+  opacity: 0.8;
+}
+
+.menu-item a:hover {
+  border-bottom: 2px solid var(--border-color);
+}
+
+.menu-item img {
+  width: 24px;
+  margin-left: 50px;
+  padding-bottom: 8px;
+}
+
+.menu-item img:hover {
+  border-bottom: 2px solid var(--border-color);
+}
+/* Sub Header */
+
+.sub_header {
+  position: absolute;
+  width: 150px;
+  font-size: 14px;
+  font-weight: normal;
+  box-shadow: 0 1px 1rem rgb(0 0 0 / 20%);
+  border-radius: 2px;
+  top: 160%;
+  left: 50%;
+  display: none;
+  cursor: pointer;
+  animation: dropdown ease 0.3s;
+}
+
+@keyframes dropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.sub_header::before {
+  content: "";
+  position: absolute;
+  width: 48px;
+  height: 28px;
+  bottom: 100%;
+  background-color: transparent;
+}
+
+.menu-item:hover .sub_header {
+  display: block;
+}
+.sub-item:hover {
+  background-color: #f1f1f1;
+}
+
+.sub-item {
+  padding: 8px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  transition: all linear 0.1s;
+}
+
+.sub-item:last-child {
+  border-bottom: 0;
+}
